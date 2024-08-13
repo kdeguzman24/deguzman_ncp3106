@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+    <title>Biography</title> <!-- Title of the page displayed in the browser tab -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Eczar:wght@400..800&family=Headland+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet"> <!-- Google Fonts for custom typography -->
+    <style>
+        /* General styles for the body */
+        body {
+            display: flex; /* Flexbox layout for centering content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            background-image: url('/images/forest2.jpg'); /* Background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* No repeating of background image */
+            margin: 0; /* Remove default margin */
+            font-family: 'Montserrat', sans-serif; /* Default font for the body */
+            color: #333; /* Default text color */
+        }
+
+        /* Container for main content */
+        .main-container {
+            background-color: rgba(208, 220, 208, 0.75); /* Semi-transparent background color */
+            border-radius: 15px; /* Rounded corners */
+            padding: 40px; /* Padding inside the container */
+            max-width: 900px; /* Maximum width of the container */
+            margin: 20px; /* Margin around the container */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+
+        /* Styles for headings */
+        h1, h2 {
+            font-family: 'Oswald', sans-serif; /* Custom font for headings */
+            color: #2c3e50; /* Text color for headings */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 2px; /* Spacing between letters */
+        }
+
+        /* Styles for circular image */
+        .circle-image {
+            height: 200px; /* Height of the image */
+            width: 200px; /* Width of the image */
+            border-radius: 50%; /* Circular shape */
+            object-fit: cover; /* Crop the image to fit the container */
+            border: 5px solid #fff; /* White border around the image */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: transform 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for the circular image */
+        .circle-image:hover {
+            transform: scale(1.05); /* Slightly enlarge the image on hover */
+        }
+
+        /* Styles for section containers */
+        .section-container {
+            background-color: rgba(181, 201, 154, 0.4); /* Semi-transparent background color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 30px; /* Padding inside the container */
+            margin: 30px 0; /* Margin above and below the container */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        /* Styles for text size */
+        .size {
+            font-size: 18px; /* Font size for text */
+            line-height: 1.8; /* Line height for readability */
+        }
+
+        /* Styles for unordered lists */
+        ul.size {
+            padding-left: 20px; /* Indentation for list items */
+        }
+
+        ul.size li {
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        /* Styles for justified text alignment */
+        .justify-center {
+            width: 100%; /* Full width */
+            margin: 0 auto; /* Center align the text block */
+            text-align: justify; /* Justify text */
+            text-align-last: start; /* Align the last line to the start */
+        }
+
+        /* Grid layout for song items */
+        .container {
+            display: grid; /* Grid layout */
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 20px; /* Space between grid items */
+        }
+
+        .column {
+            display: grid; /* Grid layout for columns */
+            gap: 20px; /* Space between items */
+        }
+
+        /* Styles for individual items */
+        .item {
+            display: flex; /* Flexbox layout */
+            align-items: center; /* Center items vertically */
+            background-color: #fff; /* White background */
+            padding: 15px; /* Padding inside the item */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect for items */
+        .item:hover {
+            transform: scale(1.05); /* Slightly enlarge the item on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+       /* Styles for play button images */
+        .playButton {
+            width: 80px; /* Width of the button */
+            height: 80px; /* Height of the button to maintain a square aspect ratio */
+            border-radius: 50%; /* Circular shape */
+            object-fit: cover; /* Crop the image to fit the container */
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-right: 15px; /* Space between button and text */
+            border: 4px solid rgba(255, 255, 255, 0.8); /* Semi-transparent white border */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%); /* Subtle gradient effect */
+        }
+
+        /* Hover effect for play button images */
+        .playButton:hover {
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+            border-color: rgba(255, 255, 255, 1); /* Solid white border on hover */
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%); /* More pronounced gradient effect */
+        }
+        /* Styles for text in items */
+        .text {
+            font-size: 17px; /* Font size for text */
+            text-align: left; /* Align text to the left */
+            flex: 1; /* Flexbox to fill available space */
+            color: #00070e; /* Text color */
+        }
+
+        /* Styles for social media buttons */
+        .socials-container {
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center align items horizontally */
+            flex-wrap: wrap; /* Wrap items if necessary */
+            gap: 20px; /* Space between items */
+            margin-top: 30px; /* Margin above the container */
+        }
+
+        .socials-container .button img {
+            width: 45px; /* Width of social media icons */
+            height: 45px; /* Height of social media icons */
+            transition: transform 0.3s ease; /* Smooth transition for hover effect */
+            border-radius: 50%; /* Circular shape */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        /* Hover effect for social media icons */
+        .socials-container .button img:hover {
+            transform: scale(1.2); /* Slightly enlarge the icon on hover */
+        }
+
+        /* Keyframes for fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Start with opacity 0 */
+                transform: translateY(-20px); /* Start slightly above */
+            }
+            to {
+                opacity: 1; /* End with full opacity */
+                transform: translateY(0); /* End at original position */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <center>
+            <h1>Behind the Screen: My Digital Journey</h1> <!-- Main heading -->
+            <img src="/images/me again.jpg" class="circle-image" alt="My Photo" title="so cute"> <!-- Profile image -->
+        </center>
+
+        <div class="section-container">
+            <div class="justify-center">
+                <p id="p1" class="size">
+                    Hello! My name is Khristine Ann Nicole F. De Guzman, and I am currently a 3rd year college student at the University of the East,
+                    majoring in Bachelor of Science in Computer Engineering. I have a strong passion for developing software and websites, which 
+                    has driven me to pursue various projects in this area. In addition to my academic pursuits, I am actively involved in a student  
+                    organization called the Society of Computer Engineering Students, where I have developed skills in programming and other related skills that I can 
+                    use in the future. I am excited about the opportunities ahead and look forward to furthering my knowledge and experience in Computer Engineering.
+                </p>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <center>
+                <h2>Fun Facts About Myself</h2> <!-- Section heading -->
+            </center>
+            <ul class="size">
+                <!-- List of fun facts -->
+                <li>I am the <strong>youngest</strong> among my three siblings.</li>
+                <li>I am an <strong>introvert.</strong></li>
+                <li>I love to eat <strong>spicy Korean noodles.</strong></li>
+                <li>I'm a fan of a Korean girl group called <strong>BLACKPINK.</strong></li>
+                <li>My bias in BLACKPINK is <strong>Jisoo.</strong></li>
+                <li>My favorite movies are <strong>Pitch Perfect and The Hunger Games.</strong></li>
+                <li>I know how to play <strong>the guitar and electric guitar.</strong></li>
+                <li>My hobbies are <strong>listening to music, playing guitar, playing games, and watching movies.</strong></li>
+                <li>I hate <strong>spiders.</strong></li>
+                <li>I have <strong>acrophobia, aerophobia, and arachnophobia.</strong></li>
+                <li>I'm starting to <strong>read books</strong> to reduce my phone usage.</li>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <center>
+                <h2>Top Ten Favorite Songs</h2> <!-- Section heading -->
+            </center>
+            <div class="container">
+                <div class="column">
+                    <!-- List of favorite songs with links and images -->
+                    <div class="item">
+                        <a href="https://youtu.be/dyRsYk0LyA8?si=FkeVTns3Djf4Uj4a" class="button" title="Click the image">
+                            <img class="playButton" src="/images/lovesick girls.jfif" alt="BLACKPINK - Lovesick Girls">
+                        </a>
+                        <p class="text"><strong>BLACKPINK - Lovesick Girls</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/KNtJGQkC-WI?si=9KeRDptTZYSAr39r" class="button" title="Click the image">
+                            <img class="playButton" src="/images/we cant be friends.jfif" alt="Ariana Grande - We Can't Be Friends">
+                        </a>
+                        <p class="text"><strong>Ariana Grande - We Can't Be Friends</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/1G4isv_Fylg?si=i5DEYRiq6AjePLD2" class="button" title="Click the image">
+                            <img class="playButton" src="/images/paradise.jfif" alt="Coldplay - Paradise">
+                        </a>
+                        <p class="text"><strong>Coldplay - Paradise</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/nyuo9-OjNNg?si=h8f2tadHwma1LgUd" class="button" title="Click the image">
+                            <img class="playButton" src="/images/iwby.jfif" alt="Arctic Monkeys - I Wanna Be Yours">
+                        </a>
+                        <p class="text"><strong>Arctic Monkeys - I Wanna Be Yours</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/mRD0-GxqHVo?si=ljluUmWOCuQTzFej" class="button" title="Click the image">
+                            <img class="playButton" src="/images/heat waves.jfif" alt="Glass Animals - Heat Waves">
+                        </a>
+                        <p class="text"><strong>Glass Animals - Heat Waves</strong></p>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <!-- Continuation of the list of favorite songs -->
+                    <div class="item">
+                        <a href="https://youtu.be/agdObcVqqMU?si=edaJ4HWxiCZ1FqUi" class="button" title="Click the image">
+                            <img class="playButton" src="/images/void.jfif" alt="The Neighbourhood - Void">
+                        </a>
+                        <p class="text"><strong>The Neighbourhood - Void</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/Ly7uj0JwgKg?si=FfVz0w5lbWAhgZRU" class="button" title="Click the image">
+                            <img class="playButton" src="/images/never be like yo.jfif" alt="Flume feat Kai - Never Be Like You">
+                        </a>
+                        <p class="text"><strong>Flume feat Kai - Never Be Like You</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/dX3k_QDnzHE?si=Y-CjiTrNg-SC_PJ_" class="button" title="Click the image">
+                            <img class="playButton" src="/images/midnight city.jfif" alt="M83 - Midnight City">
+                        </a>
+                        <p class="text"><strong>M83 - Midnight City</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/k4V3Mo61fJM?si=1-l8E3bDC9uke3KX" class="button" title="Click the image">
+                            <img class="playButton" src="/images/fix you.jfif" alt="Coldplay - Fix You">
+                        </a>
+                        <p class="text"><strong>Coldplay - Fix You</strong></p>
+                    </div>
+                    <div class="item">
+                        <a href="https://youtu.be/gJB8086wxj4?si=T2BcfjELr_qhOo3C" class="button" title="Click the image">
+                            <img class="playButton" src="/images/sdsf.jfif" alt="Nova Amor - Same Day, Same Face">
+                        </a>
+                        <p class="text"><strong>Nova Amor - Same Day, Same Face</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-container">
+            <center>
+                <h2>Socials:</h2> <!-- Section heading -->
+                <div class="socials-container">
+                    <!-- Social media icons with links -->
+                    <a href="https://www.facebook.com/khrstn.dgzmn24" class="button" title="Facebook">
+                        <img src="/images/fb.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/aymkeydi/?hl=en" class="button" title="Instagram">
+                        <img src="/images/insta.png" alt="Instagram">
+                    </a>
+                    <a href="https://open.spotify.com/user/uxahogxzsr3gxp31v0a410ooy?si=de86f78c50b0498d" class="button" title="Spotify">
+                        <img src="/images/spotify.png" alt="Spotify">
+                    </a><br><br><br><br>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
