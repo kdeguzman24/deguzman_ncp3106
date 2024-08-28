@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Professional Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" 
+    rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             background: #EDF4F2;
-            font-family: 'Moderustic';
+            font-family: 'Lato', sans-serif;
             font-size: 20px;
             color:  #EDF4F2;
             margin: 0;
@@ -43,7 +44,7 @@
         
         .nav-logo {
             font-size: 2.5rem;
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
             color: #edf4f2;
             font-weight: bold;
             text-decoration: none;
@@ -62,7 +63,7 @@
         .nav-link {
             padding: 0.75rem 1.25rem;
             font-size: 1.25rem;
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
             color: #edf4f2;;
             text-decoration: none;
             transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
@@ -94,18 +95,26 @@
             background: #31473A;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0 auto; /* Center the container horizontally */
             text-align: center; /* Optional: Center the text inside the container */
         }
         
-        p, .p1, li {
-            font-family: 'Moderustic';
+        li {
+            font-family: 'Lato', sans-serif;
             font-size: 20px;
+            font-weight: bold;
+            text-align: justify;
+        }
+
+        p, .p1 {
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            
         }
        
         h1 {
-            font-family: 'Moderustic', sans-serif; /* Consistent with navbar */
+            font-family: 'Lato', sans-serif; /* Consistent with navbar */
             font-size: 2.5rem;
             font-weight: 700;
             color: #EDF4F2;
@@ -113,7 +122,7 @@
         }
         
         h2 {
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-size: 1.75rem;
             font-weight: 600;
             color:  #EDF4F2;;
@@ -123,7 +132,7 @@
         }  
         h5
         {
-            font-family: 'Moderustic', sans-serif; /* Consistent with navbar */
+            font-family: 'Lato', sans-serif; /* Consistent with navbar */
             font-size: 1.5rem;
             font-weight: 600;
             color: #EDF4F2;;
@@ -131,7 +140,7 @@
         }   
         
         .intro-text p {
-            font-family: 'Moderustic';
+            font-family: 'Lato', sans-serif;
             font-size: 20px;
             color:  #EDF4F2;
             line-height: 1.6;
@@ -219,7 +228,7 @@
         .project-card,
         .contact-card,
         .profile-card {
-            font-family: 'Moderustic';
+            font-family: 'Lato', sans-serif;
             font-size: 20px;
             border: 0.1px solid  #EDF4F2;
             border-radius: 8px;
@@ -231,13 +240,15 @@
         
         .contact-card h2 {
             margin-bottom: 1rem;
+            font-family: 'Lato', sans-serif;
             font-size: 1.5rem;
-            color: #EDF4F2;;
+            color: #EDF4F2;
         }
         
         .contact-card p {
             margin: 0.5rem 0 1rem;
-            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+            font-size: 17px;
             color:  #EDF4F2;
         }
         
@@ -264,7 +275,7 @@
             color:  #EDF4F2;
         }
         .contact-item a {
-            color: white; /* Set the text color to white */
+            color: #EDF4F2; /* Set the text color to white */
             text-decoration: underline; /* Remove underline */
         }
         .resume-section {
@@ -273,7 +284,7 @@
         }
 
         .resume-section h2 {
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
             border-bottom: none;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
@@ -287,7 +298,9 @@
         }
 
         .accordion-button {
-            background-color: #7C8363;;/* Replace with your preferred background color */
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            background-color: #7C8363;/* Replace with your preferred background color */
             color:  #EDF4F2; /* Replace with your preferred text color */
            /* Optional: border color */
         }
@@ -297,12 +310,13 @@
         }
         
         .accordion-button:not(.collapsed) {
+            
             background-color: #7C8363; /* Replace with your preferred color when expanded */
             color:  #EDF4F2; /* Replace with your preferred text color when expanded */
         }
         .accordion-body {
             background: #F5F5F5;
-            font-family: 'Moderustic', sans-serif; /* Consistent font style */
+            font-family: 'Lato', sans-serif; /* Consistent font style */
             font-size: 1rem;
             color:  #31473A;
             line-height: 1.6; /* Improved readability */
@@ -320,10 +334,47 @@
             max-width: 100%;
             height: auto;
         }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center items horizontally */
+        }
         
+        /* Center the column within the row */
+        .col-md-6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Optional: adjust padding for spacing */
+        }
+        
+        /* Project card styles */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100%; /* Ensure the card uses full width of the column */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #7C8363;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Add hover effect */
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        
+        .card-body {
+            padding: 1rem;
+        }
         .page-content {
             padding-top: 70px; /* Ensures the page content doesn't overlap with the navbar */
-            font-family: 'Moderustic';
+            font-family: 'Lato', sans-serif;
             font-size: 20px;
             width: 100%; /* or use a fixed value like 1000px */
             margin: 0 auto; /* Center the container */
@@ -349,7 +400,7 @@
             font-weight: 600;
             color: #000; /* Customize color to fit your theme */
             margin: 0;
-            font-family: 'Moderustic', sans-serif;
+            font-family: 'Lato', sans-serif;
         }
     
         .btn-primary {
@@ -413,6 +464,9 @@
             opacity: 1;
             transform: scale(1); /* Full size */
         }
+        .card-text{
+            text-align: justify;
+        }
 
     </style>
 </head>
@@ -454,7 +508,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header border" id="headingAboutMe">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutMe" aria-expanded="false" aria-controls="collapseAboutMe">
-                        About Me
+                    <strong>About Me</strong>
                     </button>
                 </h2>
                 <div id="collapseAboutMe" class="accordion-collapse collapse " aria-labelledby="headingAboutMe" data-bs-parent="#resumeAccordion">
@@ -470,12 +524,11 @@
                     </div>
                 </div>
                 
-        
             <div class="accordion" id="resumeAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header border" id="headingEducation">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEducation" aria-expanded="false" aria-controls="collapseEducation">
-                            Education
+                            <strong>Education</strong>
                         </button>
                     </h2>
                     <div id="collapseEducation" class="accordion-collapse collapse " aria-labelledby="headingEducation" data-bs-parent="#resumeAccordion">
@@ -518,7 +571,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header  border" id="headingWorkExperience">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkExperience" aria-expanded="false" aria-controls="collapseWorkExperience">
-                            Work Experience
+                        <strong>Work Experience</strong>
                         </button>
                     </h2>
                     <div id="collapseWorkExperience" class="accordion-collapse collapse" aria-labelledby="headingWorkExperience" data-bs-parent="#resumeAccordion">
@@ -532,7 +585,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header  border" id="headingSkills">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
-                            Skills
+                        <strong>Skills</strong>
                         </button>
                     </h2>
                     <div id="collapseSkills" class="accordion-collapse collapse" aria-labelledby="headingSkills" data-bs-parent="#resumeAccordion">
@@ -556,7 +609,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header  border" id="headingCertifications">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertifications" aria-expanded="false" aria-controls="collapseCertifications">
-                            Certifications
+                        <strong>Certifications</strong>
                         </button>
                     </h2>
                     <div id="collapseCertifications" class="accordion-collapse collapse" aria-labelledby="headingCertifications" data-bs-parent="#resumeAccordion">
@@ -575,7 +628,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header  border" id="headingAchievements">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAchievements" aria-expanded="false" aria-controls="collapseAchievements">
-                            Achievements
+                        <strong>Achievements</strong>
                         </button>
                     </h2>
                     <div id="collapseAchievements" class="accordion-collapse collapse" aria-labelledby="headingAchievements" data-bs-parent="#resumeAccordion">
@@ -600,63 +653,49 @@
             <div class="container">
                 <div class="row g-4">
                     <!-- Project 1 -->
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card project-card text-center">
                             <img src="bp_web.png" class="card-img-top" alt="Project Image 1">
                             <div class="card-body">
                                 <h5 class="card-title">BLACKPINK WEBSITE</h5>
                                 <p class="card-text">This website was developed using Wix for a senior year high school project, designed specifically for BLACKPINK, a K-pop girl group I greatly admire. The objective was to boost BLACKPINK's fanbase and enhance their global recognition. 
                                     Through this project, I was able to express my love for the group and contribute to their growing popularity.
-                                    <br>Technologies Used: Wix.com<br>
-                                    Role:Front-End/Back-End Developer</p>
+                                    <br><ul><li>Technologies Used: Wix.com</li>
+                                    <li>Role:Front-End/Back-End Developer</li></ul>
+                                </p>
                                 <a href="https://deguzmankhristine.wixsite.com/my-site-6" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
         
                     <!-- Project 2 -->
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card project-card text-center">
                             <img src="mysite.png" class="card-img-top" alt="Project Image 2">
                             <div class="card-body">
                                 <h5 class="card-title">MY FIRST WEBSITE</h5>
                                 <p class="card-text"> Welcome to my personal website! Here, you can explore more about me, discover some fun facts, and find my contact information and social media links. Feel free to visit the site using the button 
                                     below to learn more about my interests and stay connected. Dive into my world and see what drives my passion for technology and creativity!
-                                    <br>Technologies Used: VS Code, HTML, CSS<br>
-                                    Role:Front-End/Back-End Developer
+                                    <br><ul><li>Technologies Used: VS Code, HTML, CSS</li>
+                                    <li>Role:Front-End/Back-End Developer</li></ul>
                                 </p>
                                 <a href="https://kdeguzman24.github.io/deguzman_ncp3106/mysite/" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
-        
-                    <!-- Project 3 -->
-                    <div class="col-md-4">
-                        <div class="card project-card text-center">
-                            <img src="hi-low2.png" class="card-img-top" alt="Project Image 3">
-                            <div class="card-body">
-                                <h5 class="card-title">HI-LOW GAME</h5>
-                                <p class="card-text">
-                                    This Hi-Low game was created conducted by our organization and it is called CPElympics. At the start, a number will be displayed, and your task is to guess whether the next number will be higher or lower than the one shown.
-                                    Test your luck, and see how long you can keep the streak going!
-                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
-                                    Role:Front-End/Back-End Developer
-                                </p>
-                                <a href="https://github.com/kdeguzman24/py-codes" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-        
+
                     <!-- Project 4 -->
                     <div class="col-md-6">
                         <div class="card project-card text-center">
                             <img src="game_icon2.png" class="card-img-top" alt="Project Image 4">
                             <div class="card-body">
                                 <h5 class="card-title">NUMBER CHASER</h5>
-                                <p class="card-text">In the "Number Chaser" game, five numbers will briefly appear on your screen before disappearing. Your challenge is to find the correct answer by either adding or subtracting the numbers. You have three attempts to get the answer right, with three difficulty levels to choose from: Easy, Medium, and Hard. You can select between addition and subtraction for solving the problems. 
-                                    This game is not only fun but also educational, making it a great choice for kids to enjoy while learning.
-                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
-                                    Role:Front-End/Back-End Developer
+                                <p class="card-text">In the "Number Chaser" game, five numbers will briefly appear on your screen before disappearing. Your challenge is to enter the correct answer by either adding or subtracting the numbers. You have three attempts to get the answer right, with three difficulty levels to choose from: Easy, Medium, and Hard.
+                                     You can select between the two options given, addition and subtraction for solving the problems. 
+                                     This game is both challenging and entertaining, and it also offers educational value, making it an excellent choice for kids to have fun while learning.
+                                    <br><ul>
+                                    <li>Technologies Used: Android Studio, JavaScript, Kotlin</li>
+                                    <li>Role:Front-End/Back-End Developer</li></ul>
                                 </p>
                                 <a href="https://github.com/kdeguzman24/Number_Chaser" class="btn btn-primary">Learn More</a>
                             </div>
@@ -669,11 +708,29 @@
                             <img src="10.png" class="card-img-top" alt="Project Image 5">
                             <div class="card-body">
                                 <h5 class="card-title">10 SECONDS GAME</h5>
-                                <p class="card-text">In the "10 Seconds" game, pressing the start button will begin a timer but you can't see the time, and your goal is to stop the timer exactly at 10 seconds by pressing the stop button. You have unlimited chances to get it right, and you can play this game with your friends for fun. Compete to see who can stop the timer closest to the 10-second mark or challenge 
-                                    each other to improve your timing skills. It’s a simple yet engaging game that tests your precision and timing under pressure.
-                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
-                                    Role:Front-End/Back-End Developer</p>
+                                <p class="card-text">In the "10 Seconds" game, pressing the start button will begin a timer but you can't see the time, and your goal is to stop the timer exactly at 10 seconds by pressing the stop button. You have unlimited chances, and you can play this game with your friends for fun. Compete to see who can stop the timer closest to the 10-second mark or challenge 
+                                    each other for fun. It’s a simple game that tests your precision,timing under pressure and can be a great way to sharpen your reaction time, making it both entertaining and beneficial for quick reflex training.
+                                    <br><ul><li>Technologies Used: Android Studio, JavaScript, Kotlin</li>
+                                    <li>Role:Front-End/Back-End Developer</li>
+                                </ul></p>
                                 <a href="https://github.com/kdeguzman24/10_sec_game" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Project 3 -->
+                     <div class="col-md-6">
+                        <div class="card project-card text-center">
+                            <img src="hi-low2.png" class="card-img-top" alt="Project Image 3">
+                            <div class="card-body">
+                                <h5 class="card-title">HI-LOW GAME</h5>
+                                <p class="card-text">
+                                    This Hi-Low game was created when our organization an event called CPElympics. At the start, a number will be displayed, and your task is to guess whether the next number will be higher or lower than the one shown.
+                                    Challenge your friends and see who can maintain the longest streak of correct guesses, and see how lucky you really are!
+                                    <br><ul><li>Technologies Used: Android Studio, JavaScript, Kotlin</li>
+                                    <li>Role:Front-End/Back-End Developer</li></ul>
+                                </p>
+                                <a href="https://github.com/kdeguzman24/py-codes" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -704,7 +761,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card card-text">
                     <h2>Socials</h2>
                     <p>Connect with me on social media to stay updated on my latest projects and activities.</p>
                     <div class="contact-details">
