@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Static Navbar</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .carousel-inner img {
+        height: 40vh; /* Adjust height as needed */
+        object-fit: cover;
+    }
+    .carousel {
+        max-width: 80%; /* Adjust width as needed */
+        margin: auto; /* Center the carousel */
+    }
+    .card {
+        margin: auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-img-top {
+        border-bottom: 2px solid #eee;
+    }
+    .card-body {
+        background-color: #f8f9fa;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #000;
+        border-radius: 50%;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Brand</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">Profile</a>
+                    <a href="#" class="nav-item nav-link">Messages</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div id="myCarousel" class="carousel slide mt-4">
+    <!-- Carousel indicators -->
+    <ol class="carousel-indicators">
+        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="bp3.jfif" class="d-block w-100" alt="BLACKPINK Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="bp2.jfif" class="d-block w-100" alt="BLACKPINK Image 2">
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="jisoo.jpg" class="card-img-top" alt="KIM JISOO">
+                <div class="card-body text-center">
+                    <h5 class="card-title">KIM JISOO</h5>
+                    <p class="card-text">Kim Jisoo is a South Korean singer and actress, best known as a member of the K-pop girl group BLACKPINK. She debuted with the group in 2016 and has since gained international fame for her vocal talent, visuals, and presence in the entertainment industry.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="jennie.jfif" class="card-img-top" alt="KIM JENNIE">
+                <div class="card-body text-center">
+                    <h5 class="card-title">KIM JENNIE</h5>
+                    <p class="card-text">Kim Jennie, known mononymously as Jennie, is a South Korean singer and rapper, widely recognized as a member of the popular K-pop group BLACKPINK. She debuted with the group in 2016 and is known for her powerful stage presence and distinct vocal style.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="rose.jfif" class="card-img-top" alt="PARK CHAEYOUNG">
+                <div class="card-body text-center">
+                    <h5 class="card-title">PARK CHAEYOUNG</h5>
+                    <p class="card-text">Park Chaeyoung, known professionally as Rosé, is a South Korean singer and member of the globally successful K-pop group BLACKPINK. She is renowned for her distinctive vocal style and charismatic stage presence.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="lisa.jfif" class="card-img-top" alt="LALISA MANOBAN">
+                <div class="card-body text-center">
+                    <h5 class="card-title">LALISA MANOBAN</h5>
+                    <p class="card-text">Lisa, also known as Lalisa Manoban, is a Thai singer and dancer best known as a member of the South Korean girl group BLACKPINK. She gained widespread recognition for her exceptional dance skills, charismatic stage presence, and successful solo career.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

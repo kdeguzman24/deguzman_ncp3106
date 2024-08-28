@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minimalist Soft Color Nav Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: #fafafa;
+            font-family: 'Moderustic';
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+        
+        .nav {
+            background-color: #f1f1f1;
+            padding: 1.25rem 2.5rem;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav:hover {
+             /* Slightly darker background on hover */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow on hover */
+        }
+        
+        .nav-logo {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            color: #007bff; /* Change color on hover */
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-link {
+            padding: 0.75rem 1.25rem;
+            font-size: 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-top: 60px;
+            padding: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .home-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
+        }
+        p {
+            font-family: 'Moderustic';
+            font-size: 20px;
+        }
+        p1 {
+            font-family: 'Moderustic';
+            font-size: 20px;
+        }
+        li {
+            font-family: 'Moderustic';
+            font-size: 20px;
+        }
+       
+        h1 {
+            font-family: 'Montserrat', sans-serif; /* Consistent with navbar */
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }  
+        h5
+        {
+            font-family: 'Montserrat', sans-serif; /* Consistent with navbar */
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }   
+        
+        .intro-text p {
+            font-family: 'Moderustic';
+            font-size: 20px;
+            color: #333333;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .intro-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 7rem;
+        }
+        
+        .page-content {
+            display: none;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .big-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+        
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .home-container {
+                padding: 1.5rem;
+            }
+            
+            .intro-text p {
+                font-size: 1.1rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem;
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+        
+        .project-card,
+        .contact-card,
+        .profile-card {
+            font-family: 'Moderustic';
+            font-size: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+        
+        .contact-card h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #000;
+        }
+        
+        .contact-card p {
+            margin: 0.5rem 0 1rem;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .contact-details {
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item strong {
+            display: block;
+            font-weight: bold;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        .resume-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-button {
+            background-color: #f8f9fa; /* Replace with your preferred background color */
+            color: #000; /* Replace with your preferred text color */
+            border: 1px solid #ddd; /* Optional: border color */
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none; /* Removes the blue outline on focus */
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #e9ecef; /* Replace with your preferred color when expanded */
+            color: #000; /* Replace with your preferred text color when expanded */
+        }
+        .accordion-body {
+            font-family: 'Roboto', sans-serif; /* Consistent font style */
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6; /* Improved readability */
+        }
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+        }
+        
+
+        .container {
+            margin-top: 20px; /* Adds some space between the content and the top of the container */
+        }
+        
+        .page-content {
+            padding-top: 70px; /* Ensures the page content doesn't overlap with the navbar */
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 250px; /* Set a fixed height */
+            object-fit: cover; /* Ensure the image covers the container without distortion */
+            border-radius: 8px;
+        }
+        
+        
+        .project-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .education-level {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #000; /* Customize color to fit your theme */
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+    
+        .btn-primary {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            color: #fff;
+            background-color: #343a40;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #23272b;
+            transform: scale(1.05);
+        }
+        
+        .btn-primary:active {
+            background-color:#1d2124;
+        }
+        .page-transition {
+            position: relative;
+            overflow: hidden; /* Ensure no overflow outside the container */
+        }
+        
+        /* Initial state with scale */
+        .page-content {
+            opacity: 1;
+            transform: scale(1); /* Default scale */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and scale */
+        }
+
+        /* Scale down effect while fading out */
+        .page-content.fade-out {
+            opacity: 0;
+            transform: scale(0.95); /* Slightly smaller */
+        }
+
+        /* Scale up effect while fading in */
+        .page-content.fade-in {
+            opacity: 1;
+            transform: scale(1); /* Full size */
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="javascript:void(0)" class="nav-logo">Portfolio</a>
+        <div class="nav-links">
+            <a href="javascript:void(0)" class="nav-link" onclick="navigateTo(event, 'home')">Home</a>
+            <a href="javascript:void(0)" class="nav-link" onclick="navigateTo(event, 'resume')">Resume</a>
+            <a href="javascript:void(0)" class="nav-link" onclick="navigateTo(event, 'projects')">Projects</a>
+            <a href="javascript:void(0)" class="nav-link" onclick="navigateTo(event, 'contact')">Contact</a>
+        </div>
+    </nav>
+
+    <div class="main-content page-wrapper">
+        <div id="home-page" class="page-content active">
+            <div class="home-container">
+                <h1 class="text-center">Welcome to My Portfolio</h1>
+                <div class="intro-text text-center">
+                    <p>Hi there! I’m Khristine Ann, an aspiring Computer Engineer with a strong passion for Software Development. My love for technology and innovation drives me to constantly learn and embrace new challenges. Fueled by creativity and a desire to make a meaningful impact in the tech world, 
+                        I’m on a journey to turn ideas into reality. Welcome to my portfolio, where I showcase my projects, skills, and experiences!</p>
+                    <p>Feel free to explore my work, and don’t hesitate to reach out with any questions or opportunities!
+                    </p>
+                    <a href="javascript:void(0)" class="btn btn-primary" onclick="navigateTo(event, 'projects')">View Projects</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="resume-page" class="page-content page-wrapper">
+            <div class="content">
+                <img src="me again.jpg" alt="Big Circular Image" class="big-image">
+                <div class="intro-text">
+                    <p>Welcome to my resume! Here you can learn more about my education, work experience, skills, and other achievements. Feel free to explore the sections below to see how I can contribute to your next project or opportunity.</p>
+                    <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAboutMe">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutMe" aria-expanded="false" aria-controls="collapseAboutMe">
+                        About Me
+                    </button>
+                </h2>
+                <div id="collapseAboutMe" class="accordion-collapse collapse " aria-labelledby="headingAboutMe" data-bs-parent="#resumeAccordion">
+                    <div class="accordion-body">
+                        <p>I’m Khristine Ann Nicole F. De Guzman, a Computer Engineering student at the University of the East, driven by a passion for 
+                            technology and innovation. With a solid background in software development, hardware, and systems design, I thrive on tackling 
+                            complex problems and transforming ideas into practical solutions. My fascination with how technology works has fueled my journey 
+                            in computer engineering, and I am dedicated to contributing to advancements in the field.
+                            Through hands-on projects like creating a smart car parking system and developing interactive applications, I’ve gained valuable 
+                            experience in both programming and embedded systems. I’m always eager to expand my skills and explore new technologies. My goal 
+                            is to leverage my expertise to make a significant impact in the tech industry and contribute to cutting-edge projects 
+                            that push the boundaries of innovation.</p>
+                    </div>
+                </div>
+                
+        
+            <div class="accordion" id="resumeAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEducation">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEducation" aria-expanded="false" aria-controls="collapseEducation">
+                            Education
+                        </button>
+                    </h2>
+                    <div id="collapseEducation" class="accordion-collapse collapse " aria-labelledby="headingEducation" data-bs-parent="#resumeAccordion">
+                        <div class="accordion-body">
+                            <div class="education-list">
+                                <div class="education-item">
+                                    <h5 class="education-level">Elementary</h5>
+                                    <p class="education-details">
+                                        Legarda Elementary School (2010-2016)<br>
+                                        Craig St, Sampaloc, Manila, 1008 Metro Manila
+                                    </p>
+                                </div>
+                                <div class="education-item">
+                                    <h5 class="education-level">Junior High School</h5>
+                                    <p class="education-details">
+                                        Ramon Magsaysay High School (2016-2020)<br>
+                                        España Boulevard, corner Don Quijote St, Sampaloc, Maynila, Kalakhang Maynila
+                                    </p>
+                                </div>
+                                <div class="education-item">
+                                    <h5 class="education-level">Senior High School</h5>
+                                    <p class="education-details">
+                                        STEM (Science, Technology, Engineering, and Mathematics)<br>
+                                        Balic-Balic, Calabash Rd, Sampaloc, Maynila, 1008 Kalakhang Maynila
+                                    </p>
+                                </div>
+                                <div class="education-item">
+                                    <h5 class="education-level">College</h5>
+                                    <p class="education-details">
+                                        University of the East (2022-present)<br>
+                                        Bachelor of Science in Computer Engineering<br>
+                                        2219 Recto Ave, Sampaloc, Manila, 1008 Metro Manila<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingWorkExperience">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkExperience" aria-expanded="false" aria-controls="collapseWorkExperience">
+                            Work Experience
+                        </button>
+                    </h2>
+                    <div id="collapseWorkExperience" class="accordion-collapse collapse" aria-labelledby="headingWorkExperience" data-bs-parent="#resumeAccordion">
+                        <div class="accordion-body">
+                            <p>I am currently a student and do not have work experience directly related to my program. 
+                                However, I look forward to updating this section with relevant experience upon graduation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSkills">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
+                            Skills
+                        </button>
+                    </h2>
+                    <div id="collapseSkills" class="accordion-collapse collapse" aria-labelledby="headingSkills" data-bs-parent="#resumeAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Programming Language (Python,JavaScript,
+                                    C++, Html)
+                                </li>
+                                <li>Software Development</li>
+                                <li>Hardware Knowledge</li>
+                                <li>Embedded System Development</li>
+                                <li>Problem-Solving Skills</li>
+                                <li>Adaptability</li>
+                                <li>Critical Thinking</li>
+                                <!-- Add more skills as needed -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCertifications">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertifications" aria-expanded="false" aria-controls="collapseCertifications">
+                            Certifications
+                        </button>
+                    </h2>
+                    <div id="collapseCertifications" class="accordion-collapse collapse" aria-labelledby="headingCertifications" data-bs-parent="#resumeAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Code Crash: Python Programming Challenge. (April 22, 2024)</li>
+                                <li>Cybersentinel: A Cybersecurity Exploration. (February 26, 2024)</li>
+                                <li>Welcome To Flutterverse: A Hands-On Introduction To Cross-Platform Mobile App Development Workshop. (February 26, 2024)</li>
+                                <li>1st Computer Engineering Technology Conference Going Beyond Revolutions: Shaping The Next Generation Of Computer Engineers. (April 23 & 24, 2024)</li>
+                                <!-- Add more certifications as needed -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingAchievements">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAchievements" aria-expanded="false" aria-controls="collapseAchievements">
+                            Achievements
+                        </button>
+                    </h2>
+                    <div id="collapseAchievements" class="accordion-collapse collapse" aria-labelledby="headingAchievements" data-bs-parent="#resumeAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Graduated Grade 10 with Honors</li>
+                                <li>Graduated Grade 12 with Honors</li>
+                                <li>3rd place in Code Crash: Python Programming Challenge. </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+        <div id="projects-page" class="page-content page-wrapper">
+            <h1 class="text-center">Projects Page</h1>
+            <p id="1" class="text-center mb-4">Here are some of my projects:</p>
+        
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Project 1 -->
+                    <div class="col-md-4">
+                        <div class="card project-card text-center">
+                            <img src="bp_web.png" class="card-img-top" alt="Project Image 1">
+                            <div class="card-body">
+                                <h5 class="card-title">BLACKPINK WEBSITE</h5>
+                                <p class="card-text">This website was created using Wix as part of a project during my senior year of high school. I designed it for Blackpink (a kpop girl group), as I was a huge fan of the group. 
+                                    The goal of the website was to help Blackpink gain more fans and increase their recognition for their music internationally.</p>
+                                <a href="https://deguzmankhristine.wixsite.com/my-site-6" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Project 2 -->
+                    <div class="col-md-4">
+                        <div class="card project-card text-center">
+                            <img src="mysite.png" class="card-img-top" alt="Project Image 2">
+                            <div class="card-body">
+                                <h5 class="card-title">MY FIRST WEBSITE</h5>
+                                <p class="card-text"> "Welcome to my personal website! Here, you can explore more about me, discover some fun facts, and find my contact information and social media links. Feel free to visit the site using the button 
+                                    below to learn more about my interests and stay connected. Dive into my world and see what drives my passion for technology and creativity!"</p>
+                                <a href="https://kdeguzman24.github.io/deguzman_ncp3106/mysite/" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Project 3 -->
+                    <div class="col-md-4">
+                        <div class="card project-card text-center">
+                            <img src="hi-low2.png" class="card-img-top" alt="Project Image 3">
+                            <div class="card-body">
+                                <h5 class="card-title">HI-LOW GAME</h5>
+                                <p class="card-text">
+                                    This Hi-Low game was created conducted by our organization and it is called CPElympics. At the start, a number will be displayed, and your task is to guess whether the next number will be higher or lower than the one shown.
+                                    Test your luck, and see how long you can keep the streak going!
+                                </p>
+                                <a href="https://github.com/kdeguzman24/py-codes" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Project 4 -->
+                    <div class="col-md-6">
+                        <div class="card project-card text-center">
+                            <img src="game_icon2.png" class="card-img-top" alt="Project Image 4">
+                            <div class="card-body">
+                                <h5 class="card-title">NUMBER CHASER</h5>
+                                <p class="card-text">In the "Number Chaser" game, five numbers will briefly appear on your screen before disappearing. Your challenge is to find the correct answer by either adding or subtracting the numbers. You have three attempts to get the answer right, with three difficulty levels to choose from: Easy, Medium, and Hard. You can select between addition and subtraction for solving the problems. 
+                                    This game is not only fun but also educational, making it a great choice for kids to enjoy while learning.</p>
+                                <a href="https://github.com/kdeguzman24/Number_Chaser" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Project 5 -->
+                    <div class="col-md-6">
+                        <div class="card project-card text-center">
+                            <img src="10.png" class="card-img-top" alt="Project Image 5">
+                            <div class="card-body">
+                                <h5 class="card-title">10 SECONDS GAME</h5>
+                                <p class="card-text">In the "10 Seconds" game, pressing the start button will begin a timer but you can't see the time, and your goal is to stop the timer exactly at 10 seconds by pressing the stop button. You have unlimited chances to get it right, and you can play this game with your friends for fun. Compete to see who can stop the timer closest to the 10-second mark or challenge 
+                                    each other to improve your timing skills. It’s a simple yet engaging game that tests your precision and timing under pressure.</p>
+                                <a href="https://github.com/kdeguzman24/10_sec_game" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-page" class="page-content page-wrapper">
+            <h1 class="text-center">Contact Me</h1>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <h2>Email</h2>
+                    <p>Stay in touch with me via email for professional inquiries or collaboration opportunities.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p>dg.khristineann@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h2>Phone</h2>
+                    <p>Feel free to reach out by phone for immediate communication or discussions.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <p>+639763687740</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h2>Socials</h2>
+                    <p>Connect with me on social media to stay updated on my latest projects and activities.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Facebook:</strong>
+                            <p><a href="https://www.facebook.com/khrstn.dgzmn24?mibextid=ZbWKwL" target="_blank">facebook.com/khrstn.dgzmn24</a></p>
+                            <strong>GitHub:</strong>
+                            <p><a href="https://github.com/kdeguzman24" target="_blank">github.com/kdeguzman24</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateTo(event, sectionId) {
+            event.preventDefault();
+            
+            // Remove active class from all nav-links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            // Add active class to the clicked nav-link
+            event.currentTarget.classList.add('active');
+    
+            // Get the currently active page content and the new page content
+            const currentPage = document.querySelector('.page-content.active');
+            const newPage = document.getElementById(`${sectionId}-page`);
+    
+            // If there's an active page, apply the fade-out effect
+            if (currentPage) {
+                currentPage.classList.add('fade-out');
+    
+                // Wait for the fade-out effect to finish before changing content
+                setTimeout(() => {
+                    currentPage.classList.remove('active', 'fade-out');
+    
+                    // Add the fade-in effect to the new page
+                    newPage.classList.add('active', 'fade-in');
+    
+                    // Remove fade-in class after animation is done
+                    setTimeout(() => {
+                        newPage.classList.remove('fade-in');
+                    }, 500); // Duration of the fade-in effect
+                }, 500); // Duration of the fade-out effect
+            } else {
+                // If no page is currently active, directly show the new page
+                newPage.classList.add('active', 'fade-in');
+    
+                // Remove fade-in class after animation is done
+                setTimeout(() => {
+                    newPage.classList.remove('fade-in');
+                }, 500); // Duration of the fade-in effect
+            }
+        }
+    
+        // Optional: Add event listeners to nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                navigateTo(event, this.getAttribute('href').replace('#', ''));
+            });
+        });
+    </script>
+    
+</body>
+</html>
