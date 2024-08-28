@@ -43,7 +43,7 @@
         
         .nav-logo {
             font-size: 2.5rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Moderustic', sans-serif;
             color: #edf4f2;
             font-weight: bold;
             text-decoration: none;
@@ -62,7 +62,7 @@
         .nav-link {
             padding: 0.75rem 1.25rem;
             font-size: 1.25rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Moderustic', sans-serif;
             color: #edf4f2;;
             text-decoration: none;
             transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
@@ -90,10 +90,10 @@
             max-width: 1200px;
             width: 100%;
             padding: 2rem;
-            background: #7c8363;
+            background: #31473A;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Moderustic', sans-serif;
         }
         p, .p1, li {
             font-family: 'Moderustic';
@@ -101,7 +101,7 @@
         }
        
         h1 {
-            font-family: 'Montserrat', sans-serif; /* Consistent with navbar */
+            font-family: 'Moderustic', sans-serif; /* Consistent with navbar */
             font-size: 2.5rem;
             font-weight: 700;
             color: #EDF4F2;
@@ -109,7 +109,7 @@
         }
         
         h2 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Moderustic', sans-serif;
             font-size: 1.75rem;
             font-weight: 600;
             color:  #EDF4F2;;
@@ -119,7 +119,7 @@
         }  
         h5
         {
-            font-family: 'Montserrat', sans-serif; /* Consistent with navbar */
+            font-family: 'Moderustic', sans-serif; /* Consistent with navbar */
             font-size: 1.5rem;
             font-weight: 600;
             color: #EDF4F2;;
@@ -145,7 +145,7 @@
           
         }
         .intro-container {
-            background-color: #7C8363; /* Light gray background color */
+            background-color: #7C8363;/* Light gray background color */
             padding: 1.5rem; /* Adds padding inside the container */
             border-radius: 8px; /* Rounded corners for the container */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
@@ -156,7 +156,7 @@
         .page-content {
             display: none;
             padding: 1.5rem;
-            background:  #7C8363;
+            background:  #31473A;
             border-radius: 8px;
            
         }
@@ -210,7 +210,7 @@
             justify-content: center;
             margin: 2rem auto;
             max-width: 1200px;
-            background: #7C8363;
+            background: #31473A;
         }
         .project-card,
         .contact-card,
@@ -255,17 +255,16 @@
         
         .contact-item p {
             margin: 0;
-            
             font-size: 20px;
             font-size: 1rem;
             color:  #EDF4F2;
         }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-            color:  #EDF4F2;
-
+        .contact-item a {
+            color: white; /* Set the text color to white */
+            text-decoration: underline; /* Remove underline */
         }
+        
+
 
         .resume-section {
             margin-bottom: 2rem;
@@ -273,7 +272,7 @@
         }
 
         .resume-section h2 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Moderustic', sans-serif;
             border-bottom: none;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
@@ -287,9 +286,9 @@
         }
 
         .accordion-button {
-            background-color: #7C8363;/* Replace with your preferred background color */
+            background-color: #7C8363;;/* Replace with your preferred background color */
             color:  #EDF4F2; /* Replace with your preferred text color */
-            border: 1px solid #7C8363; /* Optional: border color */
+           /* Optional: border color */
         }
         
         .accordion-button:focus {
@@ -302,11 +301,18 @@
         }
         .accordion-body {
             background: #F5F5F5;
-            font-family: 'Roboto', sans-serif; /* Consistent font style */
+            font-family: 'Moderustic', sans-serif; /* Consistent font style */
             font-size: 1rem;
             color:  #31473A;
             line-height: 1.6; /* Improved readability */
+            border:none;
         }
+        .border {
+            border: none; /* Remove any borders */
+            margin: 0;    /* Remove any margins */
+            padding: 0;   /* Optional: Remove any padding if necessary */
+        }
+        
         .card-img-top {
             max-width: 100%;
             height: auto;
@@ -314,6 +320,8 @@
         
         .page-content {
             padding-top: 70px; /* Ensures the page content doesn't overlap with the navbar */
+            font-family: 'Moderustic';
+            font-size: 20px;
         }
         
         .project-card img {
@@ -333,14 +341,14 @@
             font-weight: 600;
             color: #000; /* Customize color to fit your theme */
             margin: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Moderustic', sans-serif;
         }
     
         .btn-primary {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             color: #EDF4F2;
-            background-color: #31473A;
+            background-color:#31473a;
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -351,13 +359,27 @@
             text-align: center; /* Center text inside the button */
             
         }
-        
-        .btn-primary:hover {
+        .btn-2{
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            color: #EDF4F2;
+            background-color: #7c8363;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 1.5rem; /* Add margin-top to space it out from the text */
+            text-align: center; /* Center text inside the button */
+            
+        }
+        .btn-primary:hover, .btn-2:hover{
             background-color: #5C846D;
             transform: scale(1.05);
         }
         
-        .btn-primary:active {
+        .btn-primary:active , btn-2:active{
             background-color:#1d2124;
         }
         .page-transition {
@@ -405,7 +427,7 @@
                         I’m on a journey to turn ideas into reality. Welcome to my portfolio, where I showcase my projects, skills, and experiences!</p>
                     <p>Feel free to explore my work, and don’t hesitate to reach out with any questions or opportunities!
                     </p>
-                    <a href="javascript:void(0)" class="btn btn-primary" onclick="navigateTo(event, 'projects')">View Projects</a>
+                    <a href="javascript:void(0)" class="btn btn-2" onclick="navigateTo(event, 'projects')">View Projects</a>
                 </div>
             </div>
         </div>
@@ -420,7 +442,7 @@
             </div>
 
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingAboutMe">
+                <h2 class="accordion-header border" id="headingAboutMe">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutMe" aria-expanded="false" aria-controls="collapseAboutMe">
                         About Me
                     </button>
@@ -441,7 +463,7 @@
         
             <div class="accordion" id="resumeAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEducation">
+                    <h2 class="accordion-header border" id="headingEducation">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEducation" aria-expanded="false" aria-controls="collapseEducation">
                             Education
                         </button>
@@ -484,7 +506,7 @@
                 </div>
         
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingWorkExperience">
+                    <h2 class="accordion-header  border" id="headingWorkExperience">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkExperience" aria-expanded="false" aria-controls="collapseWorkExperience">
                             Work Experience
                         </button>
@@ -498,7 +520,7 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSkills">
+                    <h2 class="accordion-header  border" id="headingSkills">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkills" aria-expanded="false" aria-controls="collapseSkills">
                             Skills
                         </button>
@@ -522,7 +544,7 @@
                 </div>
         
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingCertifications">
+                    <h2 class="accordion-header  border" id="headingCertifications">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCertifications" aria-expanded="false" aria-controls="collapseCertifications">
                             Certifications
                         </button>
@@ -541,7 +563,7 @@
                 </div>
         
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingAchievements">
+                    <h2 class="accordion-header  border" id="headingAchievements">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAchievements" aria-expanded="false" aria-controls="collapseAchievements">
                             Achievements
                         </button>
@@ -573,8 +595,10 @@
                             <img src="bp_web.png" class="card-img-top" alt="Project Image 1">
                             <div class="card-body">
                                 <h5 class="card-title">BLACKPINK WEBSITE</h5>
-                                <p class="card-text">This website was created using Wix as part of a project during my senior year of high school. I designed it for BLACKpink (a kpop girl group), as I was a huge fan of the group. 
-                                    The goal of the website was to help BLACKPINK gain more fans and increase their recognition for their music internationally.</p>
+                                <p class="card-text">This website was developed using Wix for a senior year high school project, designed specifically for BLACKPINK, a K-pop girl group I greatly admire. The objective was to boost BLACKPINK's fanbase and enhance their global recognition. 
+                                    Through this project, I was able to express my love for the group and contribute to their growing popularity.
+                                    <br>Technologies Used: Wix.com<br>
+                                    Role:Front-End/Back-End Developer</p>
                                 <a href="https://deguzmankhristine.wixsite.com/my-site-6" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
@@ -587,7 +611,10 @@
                             <div class="card-body">
                                 <h5 class="card-title">MY FIRST WEBSITE</h5>
                                 <p class="card-text"> "Welcome to my personal website! Here, you can explore more about me, discover some fun facts, and find my contact information and social media links. Feel free to visit the site using the button 
-                                    below to learn more about my interests and stay connected. Dive into my world and see what drives my passion for technology and creativity!"</p>
+                                    below to learn more about my interests and stay connected. Dive into my world and see what drives my passion for technology and creativity!"
+                                    <br>Technologies Used: VS Code, HTML, CSS<br>
+                                    Role:Front-End/Back-End Developer
+                                </p>
                                 <a href="https://kdeguzman24.github.io/deguzman_ncp3106/mysite/" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
@@ -602,6 +629,8 @@
                                 <p class="card-text">
                                     This Hi-Low game was created conducted by our organization and it is called CPElympics. At the start, a number will be displayed, and your task is to guess whether the next number will be higher or lower than the one shown.
                                     Test your luck, and see how long you can keep the streak going!
+                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
+                                    Role:Front-End/Back-End Developer
                                 </p>
                                 <a href="https://github.com/kdeguzman24/py-codes" class="btn btn-primary">Learn More</a>
                             </div>
@@ -615,7 +644,10 @@
                             <div class="card-body">
                                 <h5 class="card-title">NUMBER CHASER</h5>
                                 <p class="card-text">In the "Number Chaser" game, five numbers will briefly appear on your screen before disappearing. Your challenge is to find the correct answer by either adding or subtracting the numbers. You have three attempts to get the answer right, with three difficulty levels to choose from: Easy, Medium, and Hard. You can select between addition and subtraction for solving the problems. 
-                                    This game is not only fun but also educational, making it a great choice for kids to enjoy while learning.</p>
+                                    This game is not only fun but also educational, making it a great choice for kids to enjoy while learning.
+                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
+                                    Role:Front-End/Back-End Developer
+                                </p>
                                 <a href="https://github.com/kdeguzman24/Number_Chaser" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
@@ -628,7 +660,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">10 SECONDS GAME</h5>
                                 <p class="card-text">In the "10 Seconds" game, pressing the start button will begin a timer but you can't see the time, and your goal is to stop the timer exactly at 10 seconds by pressing the stop button. You have unlimited chances to get it right, and you can play this game with your friends for fun. Compete to see who can stop the timer closest to the 10-second mark or challenge 
-                                    each other to improve your timing skills. It’s a simple yet engaging game that tests your precision and timing under pressure.</p>
+                                    each other to improve your timing skills. It’s a simple yet engaging game that tests your precision and timing under pressure.
+                                    <br>Technologies Used: Android Studio, JavaScript, Kotlin<br>
+                                    Role:Front-End/Back-End Developer</p>
                                 <a href="https://github.com/kdeguzman24/10_sec_game" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
