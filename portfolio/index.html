@@ -84,6 +84,7 @@
             padding: 2rem;
             justify-content: center;
             align-items: center;
+            
         }
         
         .home-container {
@@ -94,7 +95,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             font-family: 'Moderustic', sans-serif;
+            margin: 0 auto; /* Center the container horizontally */
+            text-align: center; /* Optional: Center the text inside the container */
         }
+        
         p, .p1, li {
             font-family: 'Moderustic';
             font-size: 20px;
@@ -263,9 +267,6 @@
             color: white; /* Set the text color to white */
             text-decoration: underline; /* Remove underline */
         }
-        
-
-
         .resume-section {
             margin-bottom: 2rem;
             text-decoration: none; /* Remove any underline */
@@ -306,6 +307,8 @@
             color:  #31473A;
             line-height: 1.6; /* Improved readability */
             border:none;
+            text-align: justify;
+            overflow-y: auto;
         }
         .border {
             border: none; /* Remove any borders */
@@ -322,8 +325,13 @@
             padding-top: 70px; /* Ensures the page content doesn't overlap with the navbar */
             font-family: 'Moderustic';
             font-size: 20px;
+            width: 100%; /* or use a fixed value like 1000px */
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Adjust padding for more space inside */
+            background-color: #31473A; /* Background color to differentiate */
+            border-radius: 8px; /* Optional: Rounded corners */
         }
-        
+
         .project-card img {
             width: 100%;
             height: 250px; /* Set a fixed height */
@@ -405,6 +413,7 @@
             opacity: 1;
             transform: scale(1); /* Full size */
         }
+
     </style>
 </head>
 <body>
@@ -418,7 +427,7 @@
         </div>
     </nav>
 
-    <div class="main-content ">
+    <div class="main-content">
         <div id="home-page" class="page-content active">
             <div class="home-container">
                 <h1 class="text-center">Welcome to My Portfolio</h1>
@@ -432,7 +441,8 @@
             </div>
         </div>
 
-        <div id="resume-page" class="page-content ">
+        <div id="resume-page" class="page-content">
+            <h1 class="text-center">Resume</h1>
             <div class="content">
                 <img src="me again.jpg" alt="Big Circular Image" class="big-image">
                 <div class="intro-text intro-container">
@@ -584,7 +594,7 @@
         
 
         <div id="projects-page" class="page-content ">
-            <h1 class="text-center">Projects Page</h1>
+            <h1 class="text-center">Projects </h1>
             <p id="1" class="text-center mb-4">Here are some of my projects:</p>
         
             <div class="container">
